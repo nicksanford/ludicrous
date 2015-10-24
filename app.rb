@@ -2,7 +2,7 @@ require 'octokit'
 require 'rdiscount'
 require 'pry'
 module App
-  CLIENT            = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+  CLIENT            = Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']) 
   PAGES_REPO_NAME   = ENV['PAGES_REPO_NAME']
   PAGES_BRANCH      = CLIENT.branch(PAGES_REPO_NAME, 'gh-pages')
   DEPLOY_REPO_NAME  = ENV['DEPLOY_REPO_NAME']
