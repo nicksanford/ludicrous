@@ -1,4 +1,3 @@
-require 'octokit'
 require 'rdiscount'
 require './lib/wrappers/github'
 require './lib/parsers'
