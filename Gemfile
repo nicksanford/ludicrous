@@ -7,7 +7,8 @@ gem 'git'
 gem 'octokit'
 gem 'markup'
 
-group :development do
+group :development, :test do
   gem 'dotenv'
   gem 'pry'
+  gem 'rspec'
 end
