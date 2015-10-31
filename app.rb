@@ -6,8 +6,8 @@ require './lib/constants'
 
 module App
   include Constants
-  include Parsers
-  include Wrappers::Github
+  extend Parsers
+  extend Wrappers::Github
 
   def self.call(env)
     puts Rack::Request.new(env).params
@@ -23,7 +23,7 @@ module App
     index_markdown = insert_body_into_markdown(old_index_markdown_hash[:contents],
                               fetch_body_array(deploy_commit_sha),
                               current_now_string)
-    update_markdown index_markdown, old_index_markdown_hash[:sha]
+    update_markdown old_index_markdown_hash[:sha], index_markdown
     update_html index_markdown
     [200, { 'Content-Type' => 'text/html' }, []]
   end
